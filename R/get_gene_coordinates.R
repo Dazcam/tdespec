@@ -1,3 +1,9 @@
+#' Get gene co-ordinates from MAGMA hg19 file with genes overlapping MHC region removed
+#'
+#' @return A set of gene co-ordinates
+#' @export
+#'
+#' @examples
 get_gene_coordinates <- function() {
 
   gene_coordinates <- read_tsv(paste0(DATA_DIR, 'refs/NCBI37.3.gene.loc.txt'),

@@ -4,10 +4,7 @@ Version: 0.0.0.9000
 Authors@R: 
     person("Darren", "Cameron", , "camerond@cardiff.ac.uk", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: This package generates expression specificty scores for a range of cell types
-in a ctd object from the EWCE package. If required, it can generate input files for MAGMA 
-and SLDSR gene set enrichment analyses.
-
+Description: This package generates expression specificty scores for a range of cell types in a ctd object from the EWCE package. If required, it can generate input files for MAGMA and SLDSR gene set enrichment analyses.
 License: `use_mit_license()`
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
