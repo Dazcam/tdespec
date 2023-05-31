@@ -2,23 +2,18 @@
 % Please edit documentation in R/get_mhc_genes.R
 \name{get_mhc_genes}
 \alias{get_mhc_genes}
-\title{Get vector of hg38 genes overlapping MHC region using biomaRt}
+\title{Get vector of hg38 genes overlapping MHC region using REST API or BiomaRt}
 \usage{
-get_mhc_genes(start = "28510120", end = "33480577", server = "ensembl")
+get_mhc_genes(build = "hg38", method = "rest_api")
 }
 \arguments{
-\item{start}{Start position of MHC region.}
+\item{build}{A genome build to query the MHC genes from (hg19 or hg38)}
 
-\item{end}{End position of MHC region.}
-
-\item{server}{Ensembl server to use to call genes.}
+\item{method}{The query method to use (biomart o rest_api)}
 }
 \value{
-A vector of unique genes that fall within MHC region of chr6.
+A dataframe of genes, positions and metadata overlapping the MHC region of chr6.
 }
 \description{
-Get vector of hg38 genes overlapping MHC region using biomaRt
-}
-\examples{
-get_mhc_genes(start = 28510120, end = 33480577, server = "ensembl")
+Get vector of hg38 genes overlapping MHC region using REST API or BiomaRt
 }
