@@ -6,7 +6,13 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of tdespec is to …
+The goal of tdespec is to generate cell specificity scores for scRNAseq dataset as 
+described in the [Skene et al. (2018)](https://www.nature.com/articles/s41588-018-0129-5).
+This utilises the functionality of the Bioconductor package 
+[EWCE](https://github.com/NathanSkene/EWCE/) to generate a CTD object containing the specificity 
+scores for each cell type in a snRNAseq dataset and generates files for gene set 
+enrichment analyses packages [MAGMA](https://ctg.cncr.nl/software/magma) and 
+[LD Score regression](https://github.com/bulik/ldsc). 
 
 ## Installation
 
