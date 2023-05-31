@@ -4,7 +4,14 @@
 \alias{get_mhc_genes}
 \title{Get vector of hg38 genes overlapping MHC region using biomaRt}
 \usage{
-get_mhc_genes(start = 28510120, end = 33480577, server = "ensembl")
+get_mhc_genes(start = "28510120", end = "33480577", server = "ensembl")
+}
+\arguments{
+\item{start}{Start position of MHC region.}
+
+\item{end}{End position of MHC region.}
+
+\item{server}{Ensembl server to use to call genes.}
 }
 \value{
 A vector of unique genes that fall within MHC region of chr6.
