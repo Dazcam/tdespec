@@ -2,13 +2,16 @@
 % Please edit documentation in R/get_mhc_genes.R
 \name{get_mhc_genes}
 \alias{get_mhc_genes}
-\title{Get vector of MHC genes using biomaRt}
+\title{Get vector of hg38 genes overlapping MHC region using biomaRt}
 \usage{
-get_mhc_genes()
+get_mhc_genes(start = 28510120, end = 33480577, server = "ensembl")
 }
 \value{
 A vector of unique genes that fall within MHC region of chr6.
 }
 \description{
-Get vector of MHC genes using biomaRt
+Get vector of hg38 genes overlapping MHC region using biomaRt
+}
+\examples{
+get_mhc_genes(start = 28510120, end = 33480577, server = "ensembl")
 }

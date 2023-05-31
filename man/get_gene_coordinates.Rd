@@ -4,7 +4,10 @@
 \alias{get_gene_coordinates}
 \title{Get gene co-ordinates from MAGMA hg19 file with genes overlapping MHC region removed}
 \usage{
-get_gene_coordinates()
+get_gene_coordinates(mhc_genes = NULL)
+}
+\arguments{
+\item{mhc_genes}{A vector of genes overlapping the MHC region.}
 }
 \value{
 A set of gene co-ordinates

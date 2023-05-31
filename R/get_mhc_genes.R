@@ -3,11 +3,15 @@
 #' @return A vector of unique genes that fall within MHC region of chr6.
 #' @export
 #'
-#' @examples mhc_genes <- get_mhc_genes()
+#' @param start Start position of MHC region.
+#' @param end End position of MHC region.
+#' @param server Ensembl server to use to call genes.
+#'
+#' @examples get_mhc_genes(start = 28510120, end = 33480577, server = "ensembl")
 get_mhc_genes <- function(
 
-    start = 28510120,
-    end = 33480577,
+    start = "28510120",
+    end = "33480577",
     server = "ensembl"
 
     ) {
