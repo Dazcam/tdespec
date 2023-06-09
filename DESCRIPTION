@@ -11,7 +11,13 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Imports: 
     biomaRt,
+    purrr,
     dplyr,
+    stringi,
+    httr,
     readr,
-    stringi
+    rlang
 URL: https://dazcam.github.io/tdespec/
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
