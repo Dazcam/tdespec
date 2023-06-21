@@ -47,6 +47,7 @@ The basic `tdespec` workflow is a 4-stage process:
 
 ```{r example}
 library(tdespec)
+library(dplyr)
 mhc_genes <- get_mhc_genes(build = 'hg19', method = 'rest_api')
 get_gene_coordinates(mhc_genes %>% pull(external_name))
 ```
