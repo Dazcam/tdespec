@@ -16,7 +16,15 @@ Imports:
     stringi,
     httr,
     readr,
-    rlang
+    rlang,
+    EWCE,
+    edgeR,
+    tibble,
+    tidyr,
+    utils,
+    tidyselect,
+    magrittr,
+    tools
 URL: https://dazcam.github.io/tdespec/
 Suggests: 
     testthat (>= 3.0.0)
