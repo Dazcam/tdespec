@@ -18,23 +18,37 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of tdespec is to ...
+The goal of tdespec is to generate cell specificity scores for scRNAseq dataset as 
+described in the [Skene et al. (2018)](https://www.nature.com/articles/s41588-018-0129-5).
+This utilises the functionality of the Bioconductor package 
+[EWCE](https://github.com/NathanSkene/EWCE/) to generate a CTD object containing the specificity 
+scores for each cell type in a snRNAseq dataset and generates files for gene set 
+enrichment analyses packages [MAGMA](https://ctg.cncr.nl/software/magma) and 
+[LD Score regression](https://github.com/bulik/ldsc). 
 
 ## Installation
 
 You can install the development version of tdespec like so:
 
 ``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+if (!require(devtools)) { install.packages('devtools') } 
+library(devtools)
+install_github("Dazcam/tdespec")
 ```
 
-## Example
+## Basic workflow
 
-This is a basic example which shows you how to solve a common problem:
+The basic `tdespec` workflow is a 4-stage process:
+
+1. Create a vector of genes overlapping the MHC region of the human genome.
+2. Obtain a a tibble of a gene reference file with MHC overalpping genes removed.
+3. Create a ctd object from and snRNAseq gene expression matrix.
+4. Create input files for gene enrichment tests (MAGMA and LDSR)
 
 ```{r example}
 library(tdespec)
-## basic example code
+mhc_genes <- get_mhc_genes(build = 'hg19', method = 'rest_api')
+get_gene_coordinates(mhc_genes %>% pull(external_name))
 ```
 
 What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
