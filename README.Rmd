@@ -48,7 +48,7 @@ The basic `tdespec` workflow is a 4-stage process:
 ```{r example}
 library(tdespec)
 library(dplyr)
-data("pbmc_small")
+data("seurat_small")
 mhc_genes <- get_mhc_genes(build = 'hg19', method = 'rest_api')
 gene_coord <- get_gene_coordinates(mhc_genes %>% pull(external_name))
 ctd_path <- create_ctd(seurat_small@assays$RNA@data, 
