@@ -26,7 +26,7 @@ get_gene_coordinates <- function(
   temp <- tempfile()
   utils::download.file("https://ctg.cncr.nl/software/MAGMA/aux_files/NCBI37.3.zip", temp)
 
-  if (exists('write_ref')) {
+  if (write_ref) {
 
     gene_coordinates <- readr::read_tsv(unz(temp, "NCBI37.3.gene.loc"),
                                         col_names = FALSE, col_types = 'cciicc') %>%

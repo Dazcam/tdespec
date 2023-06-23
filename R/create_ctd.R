@@ -25,10 +25,10 @@ create_ctd <- function(matrix = NULL, meta_lev_1 = NULL, meta_lev_2 = NULL,
 
   # Remove MHC genes from matrix
   matrix_no_mhc <- matrix[!(rownames(matrix) %in% mhc_genes), ]
-  message('MHC genes removed: ', dim(matrix)[1] - dim(matrix_no_mhc)[1], )
+  message('MHC genes removed: ', dim(matrix)[1] - dim(matrix_no_mhc)[1])
 
   # Create annotations
-  annotations <- as.data.frame(cbind(as.vector(rownames(matrix)),
+  annotations <- as.data.frame(cbind(as.vector(colnames(matrix)),
                                      as.vector(meta_lev_1),
                                      as.vector(meta_lev_2)))
   colnames(annotations) <- c('cell_id', 'level1class', 'level2class')

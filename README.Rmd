@@ -41,14 +41,25 @@ install_github("Dazcam/tdespec")
 The basic `tdespec` workflow is a 4-stage process:
 
 1. Create a vector of genes overlapping the MHC region of the human genome.
-2. Obtain a a tibble of a gene reference file with MHC overalpping genes removed.
+2. Obtain a a tibble of a gene reference file with MHC overlapping genes removed.
 3. Create a ctd object from and snRNAseq gene expression matrix.
-4. Create input files for gene enrichment tests (MAGMA and LDSR)
+4. Create input files for gene enrichment tests (MAGMA and LDSR) and save to file.
 
 ```{r example}
 library(tdespec)
 library(dplyr)
+data("pbmc_small")
 mhc_genes <- get_mhc_genes(build = 'hg19', method = 'rest_api')
 get_gene_coordinates(mhc_genes %>% pull(external_name))
+ctd_path <- create_ctd(seurat_small@assays$RNA@data, 
+                       meta_lev_1 = seurat_small$cluster_level_1,
+                       meta_lev_2 = seurat_small$cluster_level_2,
+                       outdir = 'test/',
+                       mhc_genes = mhc_genes,
+                       group_name = 'brain_study')
+create_enrich_test_files(ctd_path = ctd_path, 
+                         study_id = 'brain_study',
+                         gene_coordinates = gene_coord,
+                         outdir = 'test/')
 ```
 

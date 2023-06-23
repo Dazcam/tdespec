@@ -61,7 +61,7 @@ get_mhc_genes <- function(build = 'hg38', method = 'rest_api') {
     r <- httr::GET(paste(rest_server, ext, sep = ""), httr::content_type("text/csv"))
     httr::stop_for_status(r)
 
-    mhc_genes_df <- print(httr::content(r)) %>%
+    mhc_genes_df <- httr::content(r) %>%
       purrr::map(unlist) %>%
       purrr::map(t) %>%
       purrr::map(dplyr::as_tibble) %>%

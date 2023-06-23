@@ -35,7 +35,7 @@ create_enrich_test_files <- function(
 
   # Housekeeping
   options(scipen = 999) # Turn of scientifc notation
-  utils::globalVariables(".") # Silence R CMD check https://stackoverflow.com/questions/66816638/
+  #utils::globalVariables(".") # Silence R CMD check https://stackoverflow.com/questions/66816638/
 
 
   dir.create(paste0(outdir, 'MAGMA/'),  recursive = TRUE, showWarnings = FALSE)
@@ -46,7 +46,7 @@ create_enrich_test_files <- function(
 
   for (level in levels) {
 
-    message('Creating MAGMA input files for cluster level: ', level, '...')
+    message('Creating MAGMA input files for cluster level ', level, ' ...')
 
     # Load ctd object need function as file is saved as .rda
     loadRData <- function(fileName){ # https://stackoverflow.com/questions/5577221
@@ -59,11 +59,11 @@ create_enrich_test_files <- function(
     cell_types <- colnames(ctd_obj[[level]]$specificity_quantiles)
 
     MAGMA <- dplyr::as_tibble(as.matrix(ctd_obj[[level]]$specificity_quantiles), rownames = 'hgnc') %>%
-      dplyr::inner_join(gene_coordinates) %>%
+      dplyr::inner_join(gene_coord) %>%
       tidyr::pivot_longer(tidyselect::all_of(cell_types), names_to = 'cell_type', values_to = 'quantile') %>%
       dplyr::filter(.data$quantile == 10) %>%
       dplyr::select(.data$cell_type, .data$entrez) %>%
-      with(., split(.data$entrez, cell_type))
+      with(., split(.$entrez, .$cell_type))
 
     for(i in names(MAGMA)) {
 
