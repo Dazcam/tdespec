@@ -24,7 +24,8 @@ Imports:
     utils,
     tidyselect,
     magrittr,
-    tools
+    tools,
+    rmarkdown
 URL: https://dazcam.github.io/tdespec/
 Suggests: 
     testthat (>= 3.0.0)
