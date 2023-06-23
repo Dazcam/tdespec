@@ -49,8 +49,7 @@ library(dplyr)
 #> The following objects are masked from 'package:base':
 #> 
 #>     intersect, setdiff, setequal, union
-data("pbmc_small")
-#> Warning in data("pbmc_small"): data set 'pbmc_small' not found
+data("seurat_small")
 mhc_genes <- get_mhc_genes(build = 'hg19', method = 'rest_api')
 #> 
 #> 
@@ -85,7 +84,7 @@ ctd_path <- create_ctd(seurat_small@assays$RNA@data,
 #> Checking for cells with no expressed genes.
 #> DGE:: Limma...
 #> 8,495 / 18,392 genes dropped @ DGE adj_pval_thresh < 1e-05
-#> Time difference of 4.611608 secs
+#> Time difference of 4.635189 secs
 #> 
 #> Gene counts:
 #> 
