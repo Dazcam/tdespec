@@ -59,7 +59,7 @@ create_enrich_test_files <- function(
     cell_types <- colnames(ctd_obj[[level]]$specificity_quantiles)
 
     MAGMA <- dplyr::as_tibble(as.matrix(ctd_obj[[level]]$specificity_quantiles), rownames = 'hgnc') %>%
-      dplyr::inner_join(gene_coord) %>%
+      dplyr::inner_join(gene_coordinates) %>%
       tidyr::pivot_longer(tidyselect::all_of(cell_types), names_to = 'cell_type', values_to = 'quantile') %>%
       dplyr::filter(.data$quantile == 10) %>%
       dplyr::select(.data$cell_type, .data$entrez) %>%
