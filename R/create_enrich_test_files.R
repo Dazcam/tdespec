@@ -21,7 +21,12 @@
 #' extension window for SLDSR
 #'
 #'
-#' @examples get_gene_coordinates(c('SPI1', 'MEF2C', 'GAD1', 'TREM2', 'NEUROD1'))
+#' @examples
+#' data(gene_coord)
+#' create_enrich_test_files(ctd_path = 'data/ctd_obj.rda',
+#'                                    study_id = 'brain_study',
+#'                                    gene_coordinates = gene_coord,
+#'                                    outdir = 'test/')
 create_enrich_test_files <- function(
 
   ctd_path = NULL,

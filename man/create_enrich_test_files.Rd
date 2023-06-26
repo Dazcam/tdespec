@@ -34,5 +34,9 @@ Writes a set of tsv MAGMA / SLDSR files to directory of interest
 Create files for SLDSR and MAGMA gene set enrichment tests from ctd object (Top 10\%)
 }
 \examples{
-get_gene_coordinates(c('SPI1', 'MEF2C', 'GAD1', 'TREM2', 'NEUROD1'))
+data(gene_coord)
+create_enrich_test_files(ctd_path = 'data/ctd_obj.rda',
+                                   study_id = 'brain_study',
+                                   gene_coordinates = gene_coord,
+                                   outdir = 'test/')
 }

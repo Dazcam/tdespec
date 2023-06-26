@@ -13,7 +13,9 @@
 #' @param write_ref Save a copy of the MAGMA reference to file.
 #' @param ref_dir A directory to save the reference file to.
 #'
-#' @examples get_gene_coordinates(c('SPI1', 'MEF2C', 'GAD1', 'TREM2', 'NEUROD1'))
+#' @examples
+#' data('mhc_genes')
+#' get_gene_coordinates(mhc_genes)
 get_gene_coordinates <- function(
 
   mhc_genes = NULL,

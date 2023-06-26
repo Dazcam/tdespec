@@ -20,5 +20,6 @@ A set of gene co-ordinates
 Get gene co-ordinates from MAGMA hg19 file with genes overlapping MHC region removed
 }
 \examples{
-get_gene_coordinates(c('SPI1', 'MEF2C', 'GAD1', 'TREM2', 'NEUROD1'))
+data('mhc_genes')
+get_gene_coordinates(mhc_genes)
 }

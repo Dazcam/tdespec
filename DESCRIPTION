@@ -3,7 +3,7 @@ Title: Top decile expression specificity
 Version: 0.0.0.9000
 Authors@R: 
     person("Darren", "Cameron", , "camerond@cardiff.ac.uk", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+           comment = c(ORCID = "0000-0001-7520-7741"))
 Description: This package generates expression specificty scores for a range of cell types in a ctd object from the EWCE package. If required, it can generate input files for MAGMA and SLDSR gene set enrichment analyses.
 License: MIT + file LICENSE
 Encoding: UTF-8

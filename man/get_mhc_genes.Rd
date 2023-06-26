@@ -18,6 +18,6 @@ A dataframe of genes, positions and metadata overlapping the MHC region of chr6.
 Get vector of hg38 genes overlapping MHC region
 }
 \examples{
-get_mhc_genes(build = 'hg38', method = 'rest_api')
-get_mhc_genes(build = 'hg19', method = 'biomart')
+get_mhc_genes(build = 'hg19', method = 'rest_api')
+get_mhc_genes(build = 'hg38', method = 'biomart')
 }

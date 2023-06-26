@@ -13,8 +13,8 @@
 #' @param method The query method to use (biomart or rest_api)
 #'
 #'
-#' @examples get_mhc_genes(build = 'hg38', method = 'rest_api')
-#' get_mhc_genes(build = 'hg19', method = 'biomart')
+#' @examples get_mhc_genes(build = 'hg19', method = 'rest_api')
+#' get_mhc_genes(build = 'hg38', method = 'biomart')
 get_mhc_genes <- function(build = 'hg38', method = 'rest_api') {
 
   stopifnot(build == 'hg19' || build == 'hg38')

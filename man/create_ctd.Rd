@@ -10,7 +10,8 @@ create_ctd(
   meta_lev_2 = NULL,
   outdir = NULL,
   mhc_genes = NULL,
-  group_name = NULL
+  group_name = NULL,
+  threads = NULL
 )
 }
 \arguments{
@@ -25,6 +26,9 @@ create_ctd(
 \item{mhc_genes}{A set of MHC genes to be removed}
 
 \item{group_name}{An string identifier for the dataset}
+
+\item{threads}{Number of cores to assign to process. Default is NULL,
+which will auto detect and estimate number to use.}
 }
 \value{
 A CTD object containing
@@ -33,4 +37,13 @@ directory where ctd object was stored
 }
 \description{
 Create gene expression specificity scores for scRNAseq data
+}
+\examples{
+data(seurat_small, 'mhc_genes')
+create_ctd(seurat_small@assays$RNA@data,
+                     meta_lev_1 = seurat_small$cluster_level_1,
+                     meta_lev_2 = seurat_small$cluster_level_2,
+                     outdir = 'test',
+                     mhc_genes = mhc_genes,
+                     group_name = 'brain_study')
 }
