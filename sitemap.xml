@@ -22,6 +22,12 @@
     <loc>https://dazcam.github.io/tdespec/reference/create_enrich_test_files.html</loc>
   </url>
   <url>
+    <loc>https://dazcam.github.io/tdespec/reference/ctd_obj.html</loc>
+  </url>
+  <url>
+    <loc>https://dazcam.github.io/tdespec/reference/gene_coord.html</loc>
+  </url>
+  <url>
     <loc>https://dazcam.github.io/tdespec/reference/get_gene_coordinates.html</loc>
   </url>
   <url>
@@ -29,5 +35,11 @@
   </url>
   <url>
     <loc>https://dazcam.github.io/tdespec/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>https://dazcam.github.io/tdespec/reference/mhc_genes.html</loc>
+  </url>
+  <url>
+    <loc>https://dazcam.github.io/tdespec/reference/seurat_small.html</loc>
   </url>
 </urlset>
