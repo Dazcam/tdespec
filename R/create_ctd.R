@@ -14,18 +14,19 @@
 #' @param mhc_genes A set of MHC genes to be removed
 #' @param group_name An string identifier for the dataset
 #' @param threads Number of cores to assign to process. Default is NULL,
-#' which will auto detect and estimate number to use.
+#' which will auto detect total cores and estimate number to use.
 #'
 #' @returns directory where ctd object was stored
 #'
 #' @examples
-#' data(seurat_small, 'mhc_genes')
+#' data('seurat_small', 'mhc_genes')
 #' create_ctd(seurat_small@assays$RNA@data,
 #'                      meta_lev_1 = seurat_small$cluster_level_1,
 #'                      meta_lev_2 = seurat_small$cluster_level_2,
 #'                      outdir = 'test',
 #'                      mhc_genes = mhc_genes,
-#'                      group_name = 'brain_study')
+#'                      group_name = 'brain_study',
+#'                      threads = 1)
 
 create_ctd <- function(matrix = NULL, meta_lev_1 = NULL, meta_lev_2 = NULL,
                        outdir = NULL, mhc_genes = NULL, group_name = NULL,
