@@ -77,14 +77,14 @@ ctd_path <- create_ctd(seurat_small@assays$RNA@data,
 #> 
 #> Dropping uninformative genes cpm norm ...
 #> Check 21310Check 1452
-#> 1 core(s) assigned as workers (7 reserved).
+#> 7 core(s) assigned as workers (1 reserved).
 #> Converting to sparse matrix.
 #> Checking for non-expressed genes.
 #> -2918 / 18392 non-expressed genes dropped
 #> Checking for cells with no expressed genes.
 #> DGE:: Limma...
 #> 8,495 / 18,392 genes dropped @ DGE adj_pval_thresh < 1e-05
-#> Time difference of 4.635189 secs
+#> Time difference of 8.103906 secs
 #> 
 #> Gene counts:
 #> 
@@ -93,14 +93,10 @@ ctd_path <- create_ctd(seurat_small@assays$RNA@data,
 #> CPM_DROP_GENES:9897
 #> 
 #> Creating CTD object ...
-#> 1 core(s) assigned as workers (7 reserved).
+#> 7 core(s) assigned as workers (1 reserved).
 #> Converting to sparse matrix.
 #> + Calculating normalized mean expression.
-#> Converting to sparse matrix.
-#> Converting to sparse matrix.
 #> + Calculating normalized specificity.
-#> Converting to sparse matrix.
-#> Converting to sparse matrix.
 #> Converting to sparse matrix.
 #> Converting to sparse matrix.
 #> Loading required namespace: ggdendro
@@ -113,12 +109,30 @@ create_enrich_test_files(ctd_path = ctd_path,
 #> Joining with `by = join_by(hgnc)`
 #> Creating SLDSR input files for cluster level: 1...
 #> Joining with `by = join_by(hgnc)`
+#> Level 1 checks ...
+#> # A tibble: 6 × 2
+#>   Variable             Value        
+#>   <chr>                <chr>        
+#> 1 magma_upstream_ext   35000        
+#> 2 magma_downstream_ext 10000        
+#> 3 magma_window         35UP_10DOWN  
+#> 4 sldsr_upstream_ext   100000       
+#> 5 sldsr_downstream_ext 100000       
+#> 6 sldsr_window         100UP_100DOWN
 #> Output files have been saved to: test/.
 #> Done.
 #> Creating MAGMA input files for cluster level 2 ...
-#> Joining with `by = join_by(hgnc)`
-#> Creating SLDSR input files for cluster level: 2...
-#> Joining with `by = join_by(hgnc)`
+#> Joining with `by = join_by(hgnc)`Creating SLDSR input files for cluster level: 2...
+#> Joining with `by = join_by(hgnc)`Level 2 checks ...
+#> # A tibble: 6 × 2
+#>   Variable             Value        
+#>   <chr>                <chr>        
+#> 1 magma_upstream_ext   35000        
+#> 2 magma_downstream_ext 10000        
+#> 3 magma_window         35UP_10DOWN  
+#> 4 sldsr_upstream_ext   100000       
+#> 5 sldsr_downstream_ext 100000       
+#> 6 sldsr_window         100UP_100DOWN
 #> Output files have been saved to: test/.
 #> Done.
 ```
