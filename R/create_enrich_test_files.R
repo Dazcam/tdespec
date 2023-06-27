@@ -123,5 +123,3 @@ create_enrich_test_files <- function(
  }
 
 
-df %>% dplyr::slice(1)
-

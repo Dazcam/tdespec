@@ -28,7 +28,7 @@ create_ctd(
 \item{group_name}{An string identifier for the dataset}
 
 \item{threads}{Number of cores to assign to process. Default is NULL,
-which will auto detect and estimate number to use.}
+which will auto detect total cores and estimate number to use.}
 }
 \value{
 A CTD object containing
@@ -39,11 +39,12 @@ directory where ctd object was stored
 Create gene expression specificity scores for scRNAseq data
 }
 \examples{
-data(seurat_small, 'mhc_genes')
+data('seurat_small', 'mhc_genes')
 create_ctd(seurat_small@assays$RNA@data,
                      meta_lev_1 = seurat_small$cluster_level_1,
                      meta_lev_2 = seurat_small$cluster_level_2,
                      outdir = 'test',
                      mhc_genes = mhc_genes,
-                     group_name = 'brain_study')
+                     group_name = 'brain_study',
+                     threads = 1)
 }
