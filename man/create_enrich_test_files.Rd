@@ -2,7 +2,7 @@
 % Please edit documentation in R/create_enrich_test_files.R
 \name{create_enrich_test_files}
 \alias{create_enrich_test_files}
-\title{Create files for SLDSR and magma gene set enrichment tests from ctd object (Top 10\%)}
+\title{Create files for MAGMA and SLDSR gene set enrichment tests from ctd object (Top 10\%)}
 \usage{
 create_enrich_test_files(
   ctd_path = NULL,
@@ -32,15 +32,15 @@ extension window in kb for SLDSR}
 extension window in kb for SLDSR}
 }
 \value{
-Writes a set of tsv magma / SLDSR files to directory of interest
+Writes a set of tsv MAGMA / SLDSR files to directory of interest
 }
 \description{
-Create files for SLDSR and magma gene set enrichment tests from ctd object (Top 10\%)
+Create files for MAGMA and SLDSR gene set enrichment tests from ctd object (Top 10\%)
 }
 \examples{
 data(gene_coord)
-create_enrich_test_files(ctd_path = 'data/ctd_obj.rda',
-                                   study_id = 'brain_study',
-                                   gene_coordinates = gene_coord,
-                                   outdir = 'test/')
+create_enrich_test_files(ctd_path = "./data/ctd_obj.rda",
+                         study_id = 'brain_study',
+                         gene_coordinates = gene_coord,
+                         outdir = 'test/')
 }

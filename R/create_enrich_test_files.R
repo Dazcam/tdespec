@@ -1,6 +1,6 @@
-#' Create files for SLDSR and magma gene set enrichment tests from ctd object (Top 10%)
+#' Create files for MAGMA and SLDSR gene set enrichment tests from ctd object (Top 10%)
 #'
-#' @return Writes a set of tsv magma / SLDSR files to directory of interest
+#' @return Writes a set of tsv MAGMA / SLDSR files to directory of interest
 #' @export
 #'
 #' @importFrom dplyr inner_join filter select mutate group_by group_walk
@@ -25,10 +25,10 @@
 #'
 #' @examples
 #' data(gene_coord)
-#' create_enrich_test_files(ctd_path = 'data/ctd_obj.rda',
-#'                                    study_id = 'brain_study',
-#'                                    gene_coordinates = gene_coord,
-#'                                    outdir = 'test/')
+#' create_enrich_test_files(ctd_path = "./data/ctd_obj.rda",
+#'                          study_id = 'brain_study',
+#'                          gene_coordinates = gene_coord,
+#'                          outdir = 'test/')
 create_enrich_test_files <- function(
 
   ctd_path = NULL,
